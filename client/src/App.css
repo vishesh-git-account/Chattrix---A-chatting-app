@@ -1,0 +1,383 @@
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #111b21;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  width: 30%;
+  background-color: #202c33;
+  color: white;
+  border-right: 1px solid #2a3942;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.sidebar-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #2a3942;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00a884;
+}
+
+/* Users list */
+.users-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* User item */
+.user {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #2a3942;
+  gap: 10px;
+  transition: background 0.2s;
+}
+
+.user:hover {
+  background-color: #2a3942;
+}
+
+/* Avatar */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Last message preview */
+.user span:last-child {
+  font-size: 12px;
+  color: #aaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+/* Logout bottom */
+.logout-container {
+  padding: 10px;
+  border-top: 1px solid #2a3942;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff4d4f;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #d9363e;
+}
+
+/* ================= CHAT ================= */
+
+.chat {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  background-color: #0b141a;
+}
+
+/* Header */
+.chat-header {
+  padding: 15px;
+  border-bottom: 1px solid #2a3942;
+  color: white;
+  font-weight: bold;
+}
+
+/* Messages */
+.messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message bubble */
+.message {
+  padding: 10px 14px;
+  margin: 6px 0;
+  border-radius: 8px;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+/* Sent */
+.sent {
+  background-color: #005c4b;
+  align-self: flex-end;
+  color: white;
+}
+
+/* Received */
+.received {
+  background-color: #202c33;
+  align-self: flex-start;
+  color: white;
+}
+
+/* Timestamp */
+.time {
+  font-size: 10px;
+  color: #aaa;
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* Typing */
+.typing {
+  font-size: 12px;
+  color: #aaa;
+  padding-left: 15px;
+}
+
+/* ================= INPUT ================= */
+
+.inputBox {
+  padding: 10px 15px;
+  background-color: #202c33;
+}
+
+/* Centered container */
+.input-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Textarea */
+.input-inner textarea {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+
+  min-height: 20px;
+  max-height: 80px;
+
+  resize: none;
+  overflow-y: auto;
+
+  font-family: inherit;
+}
+
+/* Hide scrollbar */
+.input-inner textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.input-inner textarea {
+  scrollbar-width: none;
+}
+
+/* Send button */
+.input-inner button {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+
+  border-radius: 50%;
+  border: none;
+
+  background-color: #00a884;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+/* ================= SCROLLBAR ================= */
+
+.messages::-webkit-scrollbar {
+  width: 0px;
+}
+
+.messages:hover::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: #2a3942;
+  border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background-color: #3b4a54;
+}
+
+.messages {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3942 transparent;
+}
+
+/* ================= LOGIN ================= */
+
+.login-container {
+  height: 100vh;
+  background: linear-gradient(135deg, #0b141a, #202c33);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  color: #00a884;
+  font-size: 40px;
+}
+
+.login-box {
+  background-color: #202c33;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.login-box h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.login-box input,
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.login-box button {
+  background-color: #00a884;
+  color: white;
+  cursor: pointer;
+}
+
+.login-box p:hover {
+  color: white;
+}
+.logo{
+  margin-bottom: 30px;
+  margin-left: -15px;
+}
+
+/* INPUT CONTAINER */
+.inputBox {
+  padding: 10px 15px;
+  background-color: #202c33;
+}
+
+/* CENTERED INNER BOX */
+.input-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* TEXTAREA */
+.input-inner textarea {
+  flex: 1;
+
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+
+  background-color: #2a3942;
+  color: white;
+
+  min-height: 20px;
+  max-height: 80px;
+
+  resize: none;
+  overflow-y: auto;
+
+  font-size: 14px;
+  font-family: inherit;
+}
+
+/* REMOVE DEFAULT LOOK */
+.input-inner textarea::placeholder {
+  color: #aaa;
+}
+
+/* HIDE SCROLLBAR */
+.input-inner textarea::-webkit-scrollbar {
+  display: none;
+}
+.input-inner textarea {
+  scrollbar-width: none;
+}
+
+/* SEND BUTTON */
+.input-inner button {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+
+  border-radius: 50%;
+  border: none;
+
+  background-color: #00a884;
+  color: white;
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.input-inner button:hover {
+  background-color: #019874;
+}
